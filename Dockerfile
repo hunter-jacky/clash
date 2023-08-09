@@ -12,7 +12,7 @@ RUN --mount=target=. \
     make BINDIR= ${TARGETOS}-${TARGETARCH}${TARGETVARIANT} && \
     mv /clash* /clash
 
-FROM alpine:latest
+FROM alpine:3.18.3
 LABEL org.opencontainers.image.source="https://github.com/Dreamacro/clash"
 
 COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
